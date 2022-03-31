@@ -1,36 +1,31 @@
-import Button from "./Button";
-import styles from "./App.module.css";
-import {useState} from "react";
-import { useEffect } from "react";
-function App() {
+import React from 'react'
+import { useState } from 'react'
 
-  const [counter, setValue] = useState(0);
-  const [keyword, setKeyword] = useState("");
-  const onClick = () => setValue((prev)=> prev +1);
-  const onChange = (event) => setKeyword(event.target.value);
-  console.log('i run all the time')
-  useEffect(() => {
-    console.log("I run when 'keyword' changes.");
-  }, [keyword]);
-  useEffect(() => {
-    console.log("I run when 'counter' changes.");
-  }, [counter]);
-  useEffect(() => {
-    console.log("I run when keyword & counter change");
-  }, [keyword, counter]);
-  console.log("serach keyword")
+function App() {
+  const [todo, setTodo] = useState('')
+  const [todos, setTodos] = useState([])
+  const onChange = (e) =>{
+    setTodo(e.target.value)
+  }
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if(todo ===""){
+      return ;
+    }
+    setTodo("");
+    setTodos(currentArray =>[todo, ...currentArray])
+    console.log(todo)
+  }
+  console.log(todos)
   return (
     <div>
-      <input
-      value={keyword}
-      onChange={onChange}
-      type="text"
-      placeholder="search here..."
-      />
-      <h1>{counter}</h1>
-      <button onClick={onClick}>click</button>
+      <h1>my to do! ({todos.length})</h1>
+      <form onSubmit={onSubmit}>
+      <input onChange={onChange} value={todo} type="text" placeholder="write your todo"></input>
+      <button>Add to do</button>
+      </form>
     </div>
   )
 }
 
-export default App;
+export default App
