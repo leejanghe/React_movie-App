@@ -3,28 +3,36 @@ import { useState,useEffect } from 'react'
 
 function App() {
 
-  const [loading, setLoading] = useState(true)
-  const [coins, setCoins] = useState([])
-  useEffect(() => {
-    fetch("https://api.coinpaprika.com/v1/tickers?limit=100")
-    // 암시적으로 변환 =()=>
-    .then((response)=> response.json())
-
-    // 리턴을 통해 반환 =()=>{}
-    .then((json) => {
-    setCoins(json)
+ const [loading,setLoading] = useState(true)
+ const [movies,setMovies] = useState([])
+ const getMovies = async()=>{
+    const response = await fetch(`https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year`)
+    const data = await response.json()
+    setMovies(data.data.movies)
     setLoading(false)
-    })
-  },[])
+ }
+ useEffect(()=>{
+    getMovies()
+ },[]);
+ console.log(movies)
+
   return (
     <div>
-      <h1>The coins! {loading?"":`(${coins.length})`}</h1>
-      {loading? <p>Loading...</p> : 
-      <ul>
-      {coins.map((coin, idx)=>(
-        <li key={idx}>{coin.name} ({coin.symbol}): ${coin.quotes.USD.price}</li>
-      ))}
-    </ul>
+      {loading? <h1>Loading...</h1>: 
+      <div>
+        {movies.map(movie => 
+            <div key={movie.id}>
+              <img src={movie.medium_cover_image}></img>
+                <h1>{movie.title}</h1>
+                <p>{movie.summary}</p>
+                <ul>
+                    {movie.genres.map((g)=>
+                    <li key={g}>{g}</li>
+                    )}
+                </ul>
+            </div>)
+        }
+      </div>
       }
     </div>
   )
