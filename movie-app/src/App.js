@@ -5,6 +5,7 @@ import Home from './routes/Home'
 import './App.module.css'
 import Test1 from './test/Test1'
 import Useinput from './test/Useinput'
+import UseTabs from './test/UseTabs'
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/test1" element={<Useinput/>}/>
+      </Routes>
+      <Routes>
+        <Route path="/test2" element={<UseTabs/>}/>
       </Routes>
     </Router>
   )
