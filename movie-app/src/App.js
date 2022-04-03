@@ -4,6 +4,7 @@ import Detail from './routes/Detail'
 import Home from './routes/Home'
 import './App.module.css'
 import Test1 from './test/Test1'
+import Useinput from './test/Useinput'
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/test" element={<Test1/>}/>
+      </Routes>
+      <Routes>
+        <Route path="/test1" element={<Useinput/>}/>
       </Routes>
     </Router>
   )
