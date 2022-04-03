@@ -8,6 +8,7 @@ import Useinput from './test/Useinput'
 import UseTabs from './test/UseTabs'
 import UseEffect from './test/UseEffect'
 import UseTitle from './test/UseTitle'
+import UseRef from './test/UseRef'
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/test4" element={<UseTitle/>}/>
+      </Routes>
+      <Routes>
+        <Route path="/test5" element={<UseRef/>}/>
       </Routes>
     </Router>
   )
