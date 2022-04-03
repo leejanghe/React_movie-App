@@ -6,6 +6,7 @@ import './App.module.css'
 import Test1 from './test/Test1'
 import Useinput from './test/Useinput'
 import UseTabs from './test/UseTabs'
+import UseEffect from './test/UseEffect'
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/test2" element={<UseTabs/>}/>
+      </Routes>
+      <Routes>
+        <Route path="/test3" element={<UseEffect/>}/>
       </Routes>
     </Router>
   )
