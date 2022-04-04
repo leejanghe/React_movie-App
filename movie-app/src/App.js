@@ -13,6 +13,7 @@ import UseClick from './test/UseClick'
 import UseConfirm from './test/UseConfirm'
 import UsePreventLeave from './test/UsePreventLeave'
 import UseBeforeLeave from './test/UseBeforeLeave'
+import UseFadeIn from './test/UseFadeIn'
 
 function App() {
   return (
@@ -52,6 +53,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/test9" element={<UseBeforeLeave/>}/>
+      </Routes>
+      <Routes>
+        <Route path="/test10" element={<UseFadeIn/>}/>
       </Routes>
     </Router>
   )
