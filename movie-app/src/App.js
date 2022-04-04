@@ -14,6 +14,7 @@ import UseConfirm from './test/UseConfirm'
 import UsePreventLeave from './test/UsePreventLeave'
 import UseBeforeLeave from './test/UseBeforeLeave'
 import UseFadeIn from './test/UseFadeIn'
+import UseNetwork from './test/UseNetwork'
 
 function App() {
   return (
@@ -56,6 +57,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/test10" element={<UseFadeIn/>}/>
+      </Routes>
+      <Routes>
+        <Route path="/test11" element={<UseNetwork/>}/>
       </Routes>
     </Router>
   )
