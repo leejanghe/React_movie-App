@@ -10,6 +10,8 @@ import UseEffect from './test/UseEffect'
 import UseTitle from './test/UseTitle'
 import UseRef from './test/UseRef'
 import UseClick from './test/UseClick'
+import UseConfirm from './test/UseConfirm'
+import UsePreventLeave from './test/UsePreventLeave'
 
 function App() {
   return (
@@ -40,6 +42,12 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/test6" element={<UseClick/>}/>
+      </Routes>
+      <Routes>
+        <Route path="/test7" element={<UseConfirm/>}/>
+      </Routes>
+      <Routes>
+        <Route path="/test8" element={<UsePreventLeave/>}/>
       </Routes>
     </Router>
   )
