@@ -12,6 +12,7 @@ import UseRef from './test/UseRef'
 import UseClick from './test/UseClick'
 import UseConfirm from './test/UseConfirm'
 import UsePreventLeave from './test/UsePreventLeave'
+import UseBeforeLeave from './test/UseBeforeLeave'
 
 function App() {
   return (
@@ -48,6 +49,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/test8" element={<UsePreventLeave/>}/>
+      </Routes>
+      <Routes>
+        <Route path="/test9" element={<UseBeforeLeave/>}/>
       </Routes>
     </Router>
   )
