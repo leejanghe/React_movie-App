@@ -17,6 +17,7 @@ import UseFadeIn from './test/UseFadeIn'
 import UseNetwork from './test/UseNetwork'
 import UseScroll from './test/UseScroll'
 import UseFullscreen from './test/UseFullscreen'
+import UseNotification from './test/UseNotification'
 
 function App() {
   return (
@@ -68,6 +69,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/test13" element={<UseFullscreen/>}/>
+      </Routes>
+      <Routes>
+        <Route path="/test14" element={<UseNotification/>}/>
       </Routes>
     </Router>
   )
