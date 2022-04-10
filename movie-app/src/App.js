@@ -3,7 +3,7 @@ import {BrowserRouter as Router,Route, Routes} from 'react-router-dom'
 import Detail from './routes/Detail'
 import Home from './routes/Home'
 import './App.module.css'
-import Test1 from './test/Test1'
+// import Test1 from './test/UseStateBase'
 import Useinput from './test/Useinput'
 import UseTabs from './test/UseTabs'
 import UseEffect from './test/UseEffect'
@@ -18,6 +18,9 @@ import UseNetwork from './test/UseNetwork'
 import UseScroll from './test/UseScroll'
 import UseFullscreen from './test/UseFullscreen'
 import UseNotification from './test/UseNotification'
+import UseStateBase from './test/UseStateBase'
+
+import AxiosApp from './test/AxiosApp'
 
 function App() {
   return (
@@ -29,7 +32,7 @@ function App() {
         <Route path="movie/:id" element={<Detail/>}/>
       </Routes>
       <Routes>
-        <Route path="/test" element={<Test1/>}/>
+        <Route path="/test" element={<UseStateBase/>}/>
       </Routes>
       <Routes>
         <Route path="/test1" element={<Useinput/>}/>
@@ -73,6 +76,10 @@ function App() {
       <Routes>
         <Route path="/test14" element={<UseNotification/>}/>
       </Routes>
+      
+      {/* <Routes>
+        <Route path="/test16" element={<AxiosApp/>}/>
+      </Routes> */}
     </Router>
   )
 }

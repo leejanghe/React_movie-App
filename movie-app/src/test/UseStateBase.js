@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function Test1() {
+function UseStateBase() {
 
     const [count, setCount] = useState(0);
     const increment = () => setCount(count + 1);
@@ -15,4 +15,4 @@ function Test1() {
     )
 }
 
-export default Test1
+export default UseStateBase
